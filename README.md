@@ -42,7 +42,8 @@ Ini adalah aplikasi kasir sederhana yang dibangun menggunakan PHP. Aplikasi ini 
 5. **Uji Coba Aplikasi:**
    - Buka aplikasi melalui browser:
      ```
-(http://localhost/kasir%20shop/api/items.php?id=1\n!) (http://localhost/kasir/index.php)
+([http://localhost/kasir%20shop/api/items.php?id=1\n!](http://localhost/kasir/cashier_app/public/api/product/index
+)) (http://localhost/kasir/index.php)
      ```
    - Pastikan aplikasi dapat diakses tanpa error dan fungsionalitasnya berjalan dengan baik.
 
