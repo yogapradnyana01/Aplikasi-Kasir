@@ -2,33 +2,48 @@
 
 session_start();
 
-//Bikin koneksi
-$c = mysqli_connect('localhost','root','','kasir');
+// Create a connection
+$c = mysqli_connect('localhost', 'root', '', 'kasir');
 
-//login
-if(isset($_POST['login'])){
-    //Initiate variable
+// Check connection
+if (!$c) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+// Login
+if (isset($_POST['login'])) {
+    // Initiate variables
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $check = mysqli_query($c,"SELECT * FROM user WHERE username='$username' and password='$password'");
-    $hitung = mysqli_num_rows($check);
+    // Prepare the SQL statement to prevent SQL injection
+    $stmt = $c->prepare("SELECT * FROM user WHERE username = ? AND password = ?");
+    $stmt->bind_param("ss", $username, $password);
 
-    if($hitung>0){
-        //jika datanya ditemukan
-        //berhasil login
+    // Execute the statement
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $hitung = $result->num_rows;
 
+    if ($hitung > 0) {
+        // Data found, successful login
         $_SESSION['login'] = 'True';
         header('location:index.php');
     } else {
-        //data tidak ditemukan
-        //gagal login
+        // Data not found, failed login
         echo '
-        <sricpt>alert("username atau password salah");
-        window.location.href="login.php"
+        <script>
+        alert("username atau password salah");
+        window.location.href="login.php";
         </script>
         ';
     }
+
+    // Close the statement
+    $stmt->close();
 }
+
+// Close the connection
+mysqli_close($c);
 
 ?>
