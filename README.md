@@ -1,4 +1,4 @@
-# Kasir PHP
+# Kasir 
 
 Ini adalah aplikasi kasir sederhana yang dibangun menggunakan PHP. Aplikasi ini memungkinkan pengguna untuk mengelola transaksi penjualan secara mudah melalui antarmuka web.
 
