@@ -27,7 +27,7 @@ require 'function.php';
 
 
 
-                                        <form method="post">
+                                        <form method="post" action="login.php">
                                             <div class="form-group">
                                                 <label for="inputEmail">Username</label>
                                                 <input class="form-control py-4" id="inputEmailAddress" name="username" type="text" placeholder="Enter username" required/>
