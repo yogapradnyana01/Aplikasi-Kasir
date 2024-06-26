@@ -20,7 +20,7 @@ Ini adalah aplikasi kasir sederhana yang dibangun menggunakan PHP. Aplikasi ini 
 2. **Clone Repositori:**
    - Clone repositori ini ke dalam direktori web server Anda:
      ```
-     git clone https://github.com/username/kasir-php.git
+     git clone https://github.com/yogapradnyana01/kasir-php.git
      ```
 
 3. **Impor Database:**
